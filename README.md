@@ -29,8 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Tecnologias usadas
 Angular - Frontend
+
 typscript - com interação com o formulário.
+
 sass - usei para estilizar o formulário
 
-## Observção
+## Obseração
 nao usei nenhuma biblioteca...
