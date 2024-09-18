@@ -1,0 +1,39 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="zoom-In zoom-in-center">
+  <div>
+    <label for="nome" class="nome">Nome</label>
+    <input id="nome" formControlName="nome" class="nome_nome"  placeholder="Entrar com o nome"/>
+    <div
+      *ngIf="formulario.get('nome')?.invalid && formulario.get('nome')?.touched"
+    ></div>
+  </div> <br>
+
+  <div>
+    <label for="email" class="email">Email</label>
+    <input id="email" formControlName="email" class="email_email" placeholder="Entrar com o email"/>
+    <div
+      *ngIf="
+        formulario.get('email')?.invalid && formulario.get('email')?.touched
+      "
+    ></div>
+    <div *ngIf="formulario.get('email')?.errors?.['required']" class="Email">
+      Email é obrigatório.
+    </div>
+    <div *ngIf="formulario.get('email')?.errors?.['email']">
+      Email inválido.
+    </div>
+  </div>
+
+  <div>
+    <label for="mensagen" class="mensagem">Mensagem</label>
+    <textarea id="mensagem" formControlName="mensagem" class="mensagem_mensagem"></textarea>
+    <div
+      *ngIf="
+        formulario.get('mensagem')?.invalid &&
+        formulario.get('mensagen')?.touched
+      "
+    ></div>
+  </div>
+
+  <button type="submit">Enviar</button>
+  <div *ngIf="mensagem" class="submit">{{ mensagem }}</div>
+</form>
